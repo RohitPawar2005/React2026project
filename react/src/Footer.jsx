@@ -1,4 +1,8 @@
 import React from 'react'
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaTwitterSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -8,9 +12,9 @@ const Footer = () => {
                 <ul>
                     <h1>COMPANY</h1>
                     <li>About us</li>
-                    <li>IndiGo Green - ESG report</li>
-                    <li>6E Embrace - Diversity Equity & Inclusion</li>
-                    <li>IndiGoReach - Our CSR initiatives</li>
+                    <li>IndiGo Green - ESG<br /> report</li>
+                    <li>6E Embrace - Diversity <br />Equity & Inclusion</li>
+                    <li>IndiGoReach - Our<br /> CSR initiatives</li>
                     <li>Board of Directors</li>
                     <li>Leadership Team</li>
                     <li>Investor Relations</li>
@@ -68,25 +72,34 @@ const Footer = () => {
             </footer >
 
             <div className="bg-blue-800 text-white p-4 ">
-                <h1>Awards</h1>
-                <ul className="flex justify-around items-center text-center gap-4 text-sm md:text-base">
+
+                <ul className="flex justify-around  text-center text-sm md:text-base">
+                    <h1 className=''>Awards</h1>
 
                     <img src="Tripadvisor.webp" alt="" />
-                    <p>Best Low Cost Airline-Asia Image</p>
+                    <p>Best Low Cost Airline- <br />Asia Image</p>
 
 
                     <img src="Passengers-choice.webp" alt="" />
-                    <p>Passenger Choice Awards</p>
+                    <p>Passenger Choice<br /> Awards</p>
 
 
                     <img src="Skytrax.webp" alt="" />
-                    <p>Best Low Cost Airline-Central Asia</p>
-
+                    <p>Best Low Cost Airline<br />-Central Asia</p>
                     <h1>SOCIAL MEDIA</h1>
+                    <ul className="flex ">
+
+                        <FaInstagramSquare size={30} />
+                        <FaFacebookSquare size={30} />
+                        <FaTwitterSquare size={30} />
+                        <FaLinkedin size={30} />
+                    </ul>
+
+
                 </ul>
             </div>
-            <div>
-                <p className="text-center">&copy; 2024 IndiGo Airlines. All rights reserved.</p>
+            <div className="bg-blue-800 text-white p-2 ">
+                <p className="text-center">&copy; 2026 IndiGo Airlines ROHIT. All rights reserved.</p>
             </div>
         </>
     )
