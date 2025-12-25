@@ -64,11 +64,16 @@ const Session = () => {
                 </Swiper>
             </section>
 
-            <section className="py-10 bg-gray-100">
-                <div className="max-w-7xl mx-auto px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                        Find exciting offers and best deals
-                    </h1>
+            <section className="w-full h-full flex justify-center py-10 bg-blue-100">
+                <div className="max-w-5xl mx-auto px-4">
+
+                    <div className="text-3xl font-bold mb-6 flex gap-1 text-italic">
+                        <h1> Find </h1>
+                        <h1 className=" text-green-800">
+                            exciting offers
+                        </h1>
+                        <h1>and best deals</h1>
+                    </div>
 
                     <Swiper
                         slidesPerView="auto"
@@ -89,7 +94,7 @@ const Session = () => {
 
                         <SwiperSlide className="!w-[250px] h-[150px]">
                             <img
-                                src="121.webp"
+                                src="5.avif"
                                 alt=""
                                 className="w-full h-full object-cover rounded-xl
           transition-transform duration-300 hover:scale-105"
@@ -98,7 +103,7 @@ const Session = () => {
 
                         <SwiperSlide className="!w-[250px] h-[150px]">
                             <img
-                                src="121.webp"
+                                src="1.avif"
                                 alt=""
                                 className="w-full h-full object-cover rounded-xl
           transition-transform duration-300 hover:scale-105"
@@ -107,7 +112,7 @@ const Session = () => {
 
                         <SwiperSlide className="!w-[250px] h-[150px]">
                             <img
-                                src="121.webp"
+                                src="3.avif"
                                 alt=""
                                 className="w-full h-full object-cover rounded-xl
           transition-transform duration-300 hover:scale-105"
@@ -116,7 +121,7 @@ const Session = () => {
 
                         <SwiperSlide className="!w-[250px] h-[150px]">
                             <img
-                                src="121.webp"
+                                src="2.avif"
                                 alt=""
                                 className="w-full h-full object-cover rounded-xl
           transition-transform duration-300 hover:scale-105"
