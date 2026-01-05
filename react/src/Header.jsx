@@ -2,8 +2,10 @@ import React from 'react'
 import './App.css'
 import Footer from './Footer.jsx'
 import Session from './Session.jsx'
-import Booking from './Booking.jsx'
-import { HiChevronDown } from "react-icons/hi2";
+// import Booking from './Booking.jsx'
+// import { HiChevronDown } from "react-icons/hi2";
+// import { Link } from 'react-router-dom';
+// import Raouts from './Raouts.jsx';
 
 
 
@@ -16,10 +18,11 @@ const Header = () => {
 
           <ul className="flex space-x-4 gap-12">
             <img className='h-10 w-19 ' src="IndiGo_logo_2x (1).avif" />
+            {/* <Raouts /> */}
 
-            <li className='flex gap-1 '>Book<HiChevronDown /></li>
+            <li>Book</li>
 
-            <li className='flex gap-1 '>Trips<HiChevronDown /></li>
+            <li>Trips</li>
 
             <li>Deals and Offers</li>
             <li>Check-in</li>
@@ -33,7 +36,7 @@ const Header = () => {
       <div className="bg-blue-100 text-center p-10 h-40 text-4xl  font-semibold">
         <h1 >Hi there, plan your journey with ease - Flights</h1>
       </div>
-      <Booking />
+      {/* <Booking /> */}
       <Session />
       <div>
         <img src="111.avif" alt="" />
