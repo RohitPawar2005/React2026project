@@ -1,126 +1,220 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function FlightBooking() {
+const FlightSearch = () => {
+
+  // ===== BASIC =====
   const [tripType, setTripType] = useState("oneway");
+  const [fromCity, setFromCity] = useState("Bhopal");
+  const [fromStation, setFromStation] = useState("BHO - Raja Bhoj Airport");
 
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [infants, setInfants] = useState(0);
+  const [toCity, setToCity] = useState("Delhi");
+  const [toStation, setToStation] = useState("DEL - IGI Airport");
 
-  // Fare per passenger
-  const adultFare = 5000;
-  const childFare = 3000;
-  const infantFare = 1000;
+  // ===== DATE =====
+  const [departureDate, setDepartureDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
 
-  const totalFare =
-    adults * adultFare +
-    children * childFare +
-    infants * infantFare;
+  // ===== PLATFORM / AIRLINE =====
+  const [platform, setPlatform] = useState("IndiGo");
+
+  // ===== PASSENGERS =====
+  const [passenger, setPassenger] = useState(1);
+
+  // ===== CLASS =====
+  const [travelClass, setTravelClass] = useState("Economy");
+
+  // ===== FUNCTIONS =====
+  const swapCity = () => {
+    setFromCity(toCity);
+    setToCity(fromCity);
+    setFromStation(toStation);
+    setToStation(fromStation);
+  };
 
   return (
-    <div className="bg-blue-50 min-h-screen flex justify-center pt-10">
-      <div className="bg-white w-[1000px] rounded-xl shadow-lg p-6">
-
-        {/* Header */}
-        <div className="flex gap-20 justify-center text-xl font-semibold mb-6">
-          <h1 className="text-blue-600">FLIGHTS</h1>
-          <h1 className="text-gray-500">Sight Seeing</h1>
-        </div>
+    <div className="bg-blue-900 min-h-screen p-6">
+      <div className="max-w-6xl mx-auto bg-white rounded-xl p-6 shadow-xl">
 
         {/* Trip Type */}
-        <div className="flex gap-6 justify-center font-semibold mb-6">
-          <button
-            onClick={() => setTripType("oneway")}
-            className={`px-4 py-2 rounded-full ${
-              tripType === "oneway" ? "bg-blue-600 text-white" : "bg-gray-100"
-            }`}
-          >
+        <div className="flex gap-6 mb-6">
+          <label>
+            <input
+              type="radio"
+              checked={tripType === "oneway"}
+              onChange={() => setTripType("oneway")}
+            />
             One Way
-          </button>
+          </label>
 
-          <button
-            onClick={() => setTripType("roundtrip")}
-            className={`px-4 py-2 rounded-full ${
-              tripType === "roundtrip" ? "bg-blue-600 text-white" : "bg-gray-100"
-            }`}
-          >
+          <label>
+            <input
+              type="radio"
+              checked={tripType === "round"}
+              onChange={() => setTripType("round")}
+            />
             Round Trip
-          </button>
+          </label>
         </div>
 
-        {/* Form */}
-        <div className="grid grid-cols-6 gap-4 items-center mb-6">
+        {/* From To */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 border p-4 rounded-xl">
 
-          <select className="border p-3 rounded-lg">
-            <option>From</option>
-            <option>Delhi (DEL)</option>
-            <option>Mumbai (BOM)</option>
-            <option>Bangalore (BLR)</option>
-          </select>
+          {/* From */}
+          <div>
+            <p className="text-sm text-gray-500">From</p>
+            <input
+              value={fromCity}
+              onChange={(e) => setFromCity(e.target.value)}
+              className="font-bold text-blue-700 w-full"
+            />
+            <select
+              value={fromStation}
+              onChange={(e) => setFromStation(e.target.value)}
+              className="w-full mt-1 border"
+            >
+              <option>BHO - Raja Bhoj Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
 
-          <select className="border p-3 rounded-lg">
-            <option>To</option>
-            <option>Delhi (DEL)</option>
-            <option>Mumbai (BOM)</option>
-            <option>Bangalore (BLR)</option>
-          </select>
 
-          <input type="date" className="border p-3 rounded-lg" />
-
-          {tripType === "roundtrip" && (
-            <input type="date" className="border p-3 rounded-lg" />
-          )}
-
-          <div className="border p-3 rounded-lg text-center">
-            {adults + children + infants} Travellers
+            </select>
           </div>
 
-          <button className="bg-blue-600 text-white font-semibold p-3 rounded-lg">
-            Search Flights
-          </button>
+          {/* Swap */}
+          <div className="flex items-center justify-center">
+            <button
+              onClick={swapCity}
+              className="border rounded-full px-3 py-1"
+            >
+              ⇄
+            </button>
+          </div>
+
+          {/* To */}
+          <div>
+            <p className="text-sm text-gray-500">To</p>
+            <input
+              value={toCity}
+              onChange={(e) => setToCity(e.target.value)}
+              className="font-bold text-blue-700 w-full"
+            />
+            <select
+              value={toStation}
+              onChange={(e) => setToStation(e.target.value)}
+              className="w-full mt-1 border"
+            >
+              <option>DEL - IGI Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>IDR - Indore Airport</option>
+              <option>BOM - Mumbai Airport</option>
+              <option>IDR - Indore Airport</option>
+
+            </select>
+          </div>
+
+          {/* Departure */}
+          <div>
+            <p className="text-sm text-gray-500">Departure</p>
+            <input
+              type="date"
+              value={departureDate}
+              onChange={(e) => setDepartureDate(e.target.value)}
+              className="border w-full"
+            />
+          </div>
+
+          {/* Return */}
+          <div>
+            <p className="text-sm text-gray-500">Return</p>
+            <input
+              type="date"
+              disabled={tripType !== "round"}
+              value={returnDate}
+              onChange={(e) => setReturnDate(e.target.value)}
+              className="border w-full"
+            />
+          </div>
         </div>
 
-        {/* Passenger Counter */}
-        <div className="border rounded-lg p-4 grid grid-cols-3 gap-6 mb-6">
+        {/* Bottom Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
 
-          {/* Adults */}
-          <div className="text-center">
-            <p className="font-semibold">Adults (₹5000)</p>
-            <div className="flex justify-center gap-4 mt-2">
-              <button onClick={() => adults > 1 && setAdults(adults - 1)}>-</button>
-              <span>{adults}</span>
-              <button onClick={() => setAdults(adults + 1)}>+</button>
-            </div>
+          {/* Platform */}
+          <div>
+            <p className="text-sm">Platform / Airline</p>
+            <select
+              value={platform}
+              onChange={(e) => setPlatform(e.target.value)}
+              className="border w-full"
+            >
+              <option>IndiGo</option>
+              <option>Air India</option>
+              <option>Vistara</option>
+              <option>Akasa Air</option>
+            </select>
           </div>
 
-          {/* Children */}
-          <div className="text-center">
-            <p className="font-semibold">Children (₹3000)</p>
-            <div className="flex justify-center gap-4 mt-2">
-              <button onClick={() => children > 0 && setChildren(children - 1)}>-</button>
-              <span>{children}</span>
-              <button onClick={() => setChildren(children + 1)}>+</button>
-            </div>
+          {/* Class */}
+          <div>
+            <p className="text-sm">Class</p>
+            <select
+              value={travelClass}
+              onChange={(e) => setTravelClass(e.target.value)}
+              className="border w-full"
+            >
+              <option>Economy</option>
+              <option>Premium Economy</option>
+              <option>Business</option>
+            </select>
           </div>
 
-          {/* Infants */}
-          <div className="text-center">
-            <p className="font-semibold">Infants (₹1000)</p>
-            <div className="flex justify-center gap-4 mt-2">
-              <button onClick={() => infants > 0 && setInfants(infants - 1)}>-</button>
-              <span>{infants}</span>
-              <button onClick={() => setInfants(infants + 1)}>+</button>
-            </div>
+          {/* Passenger */}
+          <div>
+            <p className="text-sm">Passengers</p>
+            <input
+              type="number"
+              min="1"
+              value={passenger}
+              onChange={(e) => setPassenger(e.target.value)}
+              className="border w-full"
+            />
           </div>
 
-        </div>
-
-        {/* Total Fare */}
-        <div className="text-right text-xl font-bold text-blue-600">
-          Total Fare : ₹ {totalFare}
+          {/* Search */}
+          <div className="flex items-end">
+            <button
+              onClick={() =>
+                alert(`
+From: ${fromCity} (${fromStation})
+To: ${toCity} (${toStation})
+Date: ${departureDate}
+Return: ${returnDate}
+Platform: ${platform}
+Passengers: ${passenger}
+Class: ${travelClass}
+                `)
+              }
+              className="bg-blue-900 text-white w-full py-3 rounded"
+            >
+              Search Flights
+            </button>
+          </div>
         </div>
 
       </div>
     </div>
   );
-}
+};
+
+export default FlightSearch;

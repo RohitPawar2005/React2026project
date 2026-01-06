@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Footer from './Footer.jsx'
 import Session from './Session.jsx'
-// import Booking from './Booking.jsx'
+import Booking from './Booking.jsx'
 // import { HiChevronDown } from "react-icons/hi2";
 // import { Link } from 'react-router-dom';
 // import Raouts from './Raouts.jsx';
@@ -36,7 +36,7 @@ const Header = () => {
       <div className="bg-blue-100 text-center p-10 h-40 text-4xl  font-semibold">
         <h1 >Hi there, plan your journey with ease - Flights</h1>
       </div>
-      {/* <Booking /> */}
+      <Booking />
       <Session />
       <div>
         <img src="111.avif" alt="" />
