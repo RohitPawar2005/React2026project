@@ -1,50 +1,25 @@
 import React from 'react'
 import './App.css'
-import Footer from './Footer.jsx'
-import Session from './Session.jsx'
-import Booking from './Booking.jsx'
-// import { HiChevronDown } from "react-icons/hi2";
-// import { Link } from 'react-router-dom';
-// import Raouts from './Raouts.jsx';
-
-
-
+import { Link, Outlet } from 'react-router-dom'
 const Header = () => {
-
   return (
     <>
       <header className="bg-blue-200 text-white p-4 flex justify-between items-center">
         <nav className="container mx-auto flex justify-between items-center">
-
-          <ul className="flex space-x-4 gap-12">
-            <img className='h-10 w-19 ' src="IndiGo_logo_2x (1).avif" />
-            {/* <Raouts /> */}
-
-            <li>Book</li>
-
-            <li>Trips</li>
-
-            <li>Deals and Offers</li>
-            <li>Check-in</li>
-            <li>IndiGo BluChcd ip</li>
-            <li>Tariff Sheet</li></ul>
-
-          <button className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100 ">Login</button>
+          <ul className="flex space-x-4 gap-10 justify-center ">
+            <img className='h-10 w-22 ' src="IndiGo_logo_2x (1).avif" />
+            <li><Link to="/">Book</Link></li>
+            <li><Link to="/Trips">Trips</Link></li>
+            <li><Link to="/Deals">Deals and Offers</Link></li>
+            <li><Link to="/Checkin">Check-in</Link></li>
+            <li><Link to="/IndiGo">IndiGo BluChcd ip</Link></li>
+            <li><Link to="/Tariff ">Tariff Sheet</Link></li>
+            <li><Link to="/Login"><button className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100 ">Login</button></Link></li>
+          </ul>
         </nav>
-
       </header>
-      <div className="bg-blue-100 text-center p-10 h-40 text-4xl  font-semibold">
-        <h1 >Hi there, plan your journey with ease - Flights</h1>
-      </div>
-      <Booking />
-      <Session />
-      <div>
-        <img src="111.avif" alt="" />
-      </div>
-      <Footer />
+      <Outlet />
     </>
-
   )
 }
-
 export default Header
