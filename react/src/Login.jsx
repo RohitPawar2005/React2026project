@@ -17,6 +17,25 @@ const Form2 = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault();
+
+        let valid = true
+        if (form.myname.trim() == "") {
+            alert("plas fill the nam e")
+            valid = false
+        }
+        else if (form.mymobail.trim() == "") {
+            alert("enter mobail number")
+            valid = false
+        }
+        else if (form.myemail.trim() == "") {
+            alert("enter you email id ")
+            valid = false
+        }
+        if (valid) {
+            alert("form submitted")
+        }
+
+
     };
 
     useEffect(() => {
@@ -50,7 +69,7 @@ const Form2 = () => {
 
                 <div className="mb-4">
                     <p className="block text-gray-600 mb-1">mobail</p>
-                    <input type="text" name="mymobail" value={form.mymobail} onChange={handleChange} placeholder="Enter your mobail no"
+                    <input type="number" name="mymobail" value={form.mymobail} onChange={handleChange} placeholder="Enter your mobail no"
                         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
                 </div>
                 <div className="mb-6">
@@ -60,7 +79,7 @@ const Form2 = () => {
                 </div>
 
                 <div>
-                    <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700" >Login</button>
+                    <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 cursor-pointer" >Login</button>
                 </div>
             </form>
         </div>
