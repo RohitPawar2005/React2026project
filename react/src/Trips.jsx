@@ -5,7 +5,7 @@ const Dropdown = () => {
 
     return (
         <div className="relative inline-block">
-            {/* Button */}
+
             <button
                 onClick={() => setOpen(!open)}
                 className="flex items-center gap-1 px-4 py-2 text-blue-700 font-semibold hover:text-blue-900"
@@ -14,7 +14,7 @@ const Dropdown = () => {
                 <span>⌄</span>
             </button>
 
-            {/* Dropdown Menu */}
+            \
             {open && (
                 <div className="absolute top-10 left-0 bg-white shadow-lg rounded-md w-48 border">
                     <ul className="py-2">

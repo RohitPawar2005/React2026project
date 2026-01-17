@@ -7,7 +7,7 @@ const Header = () => {
       <header className="bg-blue-200 text-white p-4 flex justify-between items-center">
         <nav className="container mx-auto flex justify-between items-center">
           <ul className="flex space-x-4 gap-10 justify-center ">
-            <img className='h-10 w-22 ' src="IndiGo_logo_2x (1).avif" />
+            <img className='h-10 w-22 object-contain  ' src="IndiGo_logo_2x (1).avif" ></img>
             <li><Link to="/">Book</Link></li>
             <li><Link to="/Trips">Trips</Link></li>
             <li><Link to="/Deals">Deals and Offers</Link></li>

@@ -20,8 +20,9 @@ function App() {
         <Route path="Checkin" element={<Checkin />} />
         <Route path="IndiGo" element={<IndiGo />} />
         <Route path="Tariff" element={<Tariff />} />
-        <Route path="Login" element={<Login />} />
       </Route>
+      <Route path="Login" element={<Login />} />
+
     </Routes>
   );
 }
